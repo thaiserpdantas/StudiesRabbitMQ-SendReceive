@@ -1,0 +1,8 @@
+C:\Users\tdantas\Projects\EstudoRabbitMQ\SendReceive\SendReceive\bin\Debug\SendReceive.exe.config
+C:\Users\tdantas\Projects\EstudoRabbitMQ\SendReceive\SendReceive\bin\Debug\SendReceive.exe
+C:\Users\tdantas\Projects\EstudoRabbitMQ\SendReceive\SendReceive\bin\Debug\SendReceive.pdb
+C:\Users\tdantas\Projects\EstudoRabbitMQ\SendReceive\SendReceive\bin\Debug\RabbitMQ.Client.dll
+C:\Users\tdantas\Projects\EstudoRabbitMQ\SendReceive\SendReceive\bin\Debug\RabbitMQ.Client.xml
+C:\Users\tdantas\Projects\EstudoRabbitMQ\SendReceive\SendReceive\obj\Debug\SendReceive.csprojResolveAssemblyReference.cache
+C:\Users\tdantas\Projects\EstudoRabbitMQ\SendReceive\SendReceive\obj\Debug\SendReceive.exe
+C:\Users\tdantas\Projects\EstudoRabbitMQ\SendReceive\SendReceive\obj\Debug\SendReceive.pdb
