@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendReceive", "SendReceive\SendReceive.csproj", "{C148EFFC-B107-4014-A3DE-1B44B7E3D0E9}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMqService", "RabbitMqService\RabbitMqService.csproj", "{2668EA49-58E0-47D3-8EEC-3132BB90E354}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneWayMessageSender", "OneWayMessageSender\OneWayMessageSender.csproj", "{06319D35-C149-467A-B10B-2058D8B4F370}"
@@ -17,10 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C148EFFC-B107-4014-A3DE-1B44B7E3D0E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C148EFFC-B107-4014-A3DE-1B44B7E3D0E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C148EFFC-B107-4014-A3DE-1B44B7E3D0E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C148EFFC-B107-4014-A3DE-1B44B7E3D0E9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2668EA49-58E0-47D3-8EEC-3132BB90E354}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2668EA49-58E0-47D3-8EEC-3132BB90E354}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2668EA49-58E0-47D3-8EEC-3132BB90E354}.Release|Any CPU.ActiveCfg = Release|Any CPU

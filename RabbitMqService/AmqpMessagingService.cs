@@ -16,6 +16,7 @@ namespace RabbitMqService
         private string _exchangeName = "";
         private string _oneWayMessageQueueName = "OneWayMessageQueueName";
         private bool _durable = true;
+        
 
 
         public IConnection GetRabbitMqConnection()
