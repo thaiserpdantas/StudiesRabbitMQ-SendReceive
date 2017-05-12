@@ -1,0 +1,7 @@
+C:\Users\tdantas\Projects\EstudoRabbitMQ\SendReceive\RabbitMqService\bin\Debug\RabbitMqService.dll
+C:\Users\tdantas\Projects\EstudoRabbitMQ\SendReceive\RabbitMqService\bin\Debug\RabbitMqService.pdb
+C:\Users\tdantas\Projects\EstudoRabbitMQ\SendReceive\RabbitMqService\bin\Debug\RabbitMQ.Client.dll
+C:\Users\tdantas\Projects\EstudoRabbitMQ\SendReceive\RabbitMqService\bin\Debug\RabbitMQ.Client.xml
+C:\Users\tdantas\Projects\EstudoRabbitMQ\SendReceive\RabbitMqService\obj\Debug\RabbitMqService.csprojResolveAssemblyReference.cache
+C:\Users\tdantas\Projects\EstudoRabbitMQ\SendReceive\RabbitMqService\obj\Debug\RabbitMqService.dll
+C:\Users\tdantas\Projects\EstudoRabbitMQ\SendReceive\RabbitMqService\obj\Debug\RabbitMqService.pdb
