@@ -1,0 +1,10 @@
+C:\Users\tdantas\Projects\EstudoRabbitMQ\SendReceive\WorkerQueueSender\bin\Debug\WorkerQueueSender.exe.config
+C:\Users\tdantas\Projects\EstudoRabbitMQ\SendReceive\WorkerQueueSender\bin\Debug\WorkerQueueSender.exe
+C:\Users\tdantas\Projects\EstudoRabbitMQ\SendReceive\WorkerQueueSender\bin\Debug\WorkerQueueSender.pdb
+C:\Users\tdantas\Projects\EstudoRabbitMQ\SendReceive\WorkerQueueSender\bin\Debug\RabbitMQ.Client.dll
+C:\Users\tdantas\Projects\EstudoRabbitMQ\SendReceive\WorkerQueueSender\bin\Debug\RabbitMqService.dll
+C:\Users\tdantas\Projects\EstudoRabbitMQ\SendReceive\WorkerQueueSender\bin\Debug\RabbitMqService.pdb
+C:\Users\tdantas\Projects\EstudoRabbitMQ\SendReceive\WorkerQueueSender\bin\Debug\RabbitMQ.Client.xml
+C:\Users\tdantas\Projects\EstudoRabbitMQ\SendReceive\WorkerQueueSender\obj\Debug\WorkerQueueSender.csprojResolveAssemblyReference.cache
+C:\Users\tdantas\Projects\EstudoRabbitMQ\SendReceive\WorkerQueueSender\obj\Debug\WorkerQueueSender.exe
+C:\Users\tdantas\Projects\EstudoRabbitMQ\SendReceive\WorkerQueueSender\obj\Debug\WorkerQueueSender.pdb

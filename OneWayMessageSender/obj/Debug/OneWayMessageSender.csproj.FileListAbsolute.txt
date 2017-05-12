@@ -5,6 +5,6 @@ C:\Users\tdantas\Projects\EstudoRabbitMQ\SendReceive\OneWayMessageSender\bin\Deb
 C:\Users\tdantas\Projects\EstudoRabbitMQ\SendReceive\OneWayMessageSender\bin\Debug\RabbitMqService.dll
 C:\Users\tdantas\Projects\EstudoRabbitMQ\SendReceive\OneWayMessageSender\bin\Debug\RabbitMqService.pdb
 C:\Users\tdantas\Projects\EstudoRabbitMQ\SendReceive\OneWayMessageSender\bin\Debug\RabbitMQ.Client.xml
-C:\Users\tdantas\Projects\EstudoRabbitMQ\SendReceive\OneWayMessageSender\obj\Debug\OneWayMessageSender.csprojResolveAssemblyReference.cache
 C:\Users\tdantas\Projects\EstudoRabbitMQ\SendReceive\OneWayMessageSender\obj\Debug\OneWayMessageSender.exe
 C:\Users\tdantas\Projects\EstudoRabbitMQ\SendReceive\OneWayMessageSender\obj\Debug\OneWayMessageSender.pdb
+C:\Users\tdantas\Projects\EstudoRabbitMQ\SendReceive\OneWayMessageSender\obj\Debug\OneWayMessageSender.csprojResolveAssemblyReference.cache
