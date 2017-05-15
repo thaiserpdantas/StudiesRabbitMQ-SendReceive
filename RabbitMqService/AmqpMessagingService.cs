@@ -21,6 +21,9 @@ namespace RabbitMqService
         private string _publishSubscribeExchangeName = "PublishSubscibeExchange";
         private string _publishSubscribeQueueOne = "PublishSubscribeQueueOne";
         private string _publishSubscribeQueueTwo = "PublishSubscribeQueueTwo";
+        private string _rpcQueueName = "RpcQueue";
+        private QueueingBasicConsumer _rpcConsumer;
+        private string _responseQueue;
 
 
         public IConnection GetRabbitMqConnection()
@@ -127,8 +130,8 @@ namespace RabbitMqService
             }
 
         }
-        
-        public void ReceivePublishSubscribeMessageReceiverTwo (IModel model)
+
+        public void ReceivePublishSubscribeMessageReceiverTwo(IModel model)
         {
             model.BasicQos(0, 1, false);
             Subscription subscription = new Subscription(model, _publishSubscribeQueueTwo, false);
@@ -142,6 +145,70 @@ namespace RabbitMqService
         }
 
 
+        //criando rpc queue
+        public void SetUpQueueForRpcDemo(IModel model)
+        {
+            model.QueueDeclare(_rpcQueueName, _durable, false, false, null);
+        }
+
+        //metodo rpc de envio
+        public string SendRpcMessageToQueue(string message, IModel model, TimeSpan timeout)
+        {
+            if (string.IsNullOrEmpty(_responseQueue))
+            {
+                _responseQueue = model.QueueDeclare().QueueName;
+            }
+
+            if (_rpcConsumer == null)
+            {
+                _rpcConsumer = new QueueingBasicConsumer(model);
+                model.BasicConsume(_responseQueue, true, _rpcConsumer);
+            }
+
+            string correlationId = Guid.NewGuid().ToString();
+
+            IBasicProperties basicProperties = model.CreateBasicProperties();
+            basicProperties.ReplyTo = _responseQueue;
+            basicProperties.CorrelationId = correlationId;
+
+            byte[] messageBytes = Encoding.UTF8.GetBytes(message);
+            model.BasicPublish("", _rpcQueueName, basicProperties, messageBytes);
+
+            DateTime timeoutDate = DateTime.UtcNow + timeout;
+            while (DateTime.UtcNow <= timeoutDate)
+            {
+                BasicDeliverEventArgs deliveryArguments = (BasicDeliverEventArgs)_rpcConsumer.Queue.Dequeue();
+                if (deliveryArguments.BasicProperties != null
+                    && deliveryArguments.BasicProperties.CorrelationId == correlationId)
+                {
+                    string response = Encoding.UTF8.GetString(deliveryArguments.Body);
+                    return response;
+                }
+            }
+            throw new TimeoutException("No response before the timeout period.");
+        }
+
+        //metodo rpc de recebimento
+        public void receiveRpcMessage(IModel model)
+        {
+            model.BasicQos(0, 1, false);
+            QueueingBasicConsumer consumer = new QueueingBasicConsumer(model);
+            model.BasicConsume(_rpcQueueName, false, consumer);
+
+            while (true)
+            {
+                BasicDeliverEventArgs deliveryArguments = consumer.Queue.Dequeue() as BasicDeliverEventArgs;
+                string message = Encoding.UTF8.GetString(deliveryArguments.Body);
+                Console.WriteLine("Message: {0}; {1}", message, "Enter your response: ");
+                string response = Console.ReadLine();
+                IBasicProperties replyBasicProperties = model.CreateBasicProperties();
+                replyBasicProperties.CorrelationId = deliveryArguments.BasicProperties.CorrelationId;
+                byte[] responseBytes = Encoding.UTF8.GetBytes(response);
+                model.BasicPublish("", deliveryArguments.BasicProperties.ReplyTo, replyBasicProperties, responseBytes);
+                model.BasicAck(deliveryArguments.DeliveryTag, false);
+            }
+
+        }
 
     }
 }

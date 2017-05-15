@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using RabbitMQ.Client;
 using RabbitMqService;
 
-namespace PublishSubscribeSender
+namespace RpcSender
 {
     class Program
     {
@@ -15,23 +15,22 @@ namespace PublishSubscribeSender
             AmqpMessagingService messagingService = new AmqpMessagingService();
             IConnection connection = messagingService.GetRabbitMqConnection();
             IModel model = connection.CreateModel();
-            //messagingService.SetUpExchangeAndQueuesForDemo(model);
-            RunPublishSubscribeMessageDemo(model, messagingService);
-
+            //messagingService.SetUpQueueForRpcDemo(model);
+            RunRpcMessageDemo(model, messagingService);
         }
 
-        private static void RunPublishSubscribeMessageDemo(IModel model, AmqpMessagingService messagingService)
+        private static void RunRpcMessageDemo (IModel model, AmqpMessagingService messagingService)
         {
-            Console.WriteLine("Enter your message and press Enter. Quit with 'q'.");
+            Console.WriteLine("Enter your message and press Enter. Quis whit 'q'");
             while (true)
             {
                 string message = Console.ReadLine();
                 if (message.ToLower() == "q") break;
-
-                messagingService.SendMessageToPublishSubscribeQueue(message, model);
+                String response = messagingService.SendRpcMessageToQueue(message, model, TimeSpan.FromMinutes(1));
+                Console.WriteLine("Response: {0}", response);
             }
-        }
 
+        }
 
     }
 }
